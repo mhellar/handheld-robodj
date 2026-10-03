@@ -1,0 +1,652 @@
+(kicad_sch
+	(version 20250610)
+	(generator "claude_gen")
+	(generator_version "10.0")
+	(uuid "16163287-3f32-4049-bb6f-0374ccdfc90b")
+	(paper "A4")
+	(title_block
+		(title "S3 Handheld Rev A")
+		(rev "A")
+		(comment 1 "ESP32-S3 SuperMini + 1.5in SH1107 OLED + KY-023 joystick + 4 buttons + MAX98357A I2S amp")
+		(comment 2 "Single-sided CNC board, all copper on B.Cu")
+	)
+	(lib_symbols
+		(symbol "Switch:SW_Push"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 1.016)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "SW"
+				(at 1.27 2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "SW_Push"
+				(at 0 -1.524 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 5.08 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Push button switch, generic, two pins"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "switch normally-open pushbutton push-button"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "SW_Push_0_1"
+				(circle
+					(center -2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27)
+						(xy 0 3.048)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 1.27)
+						(xy -2.54 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "s3_handheld:MAX98357A_Module"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "U"
+				(at 0 12.7000 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "MAX98357A"
+				(at 0 -12.7000 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "MAX98357A_Module_0_1"
+				(rectangle
+					(start -7.6200 -10.1600)
+					(end 0.0000 10.1600)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin input line
+					(at -10.16 7.62 0)
+					(length 2.54)
+					(name "LRC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 5.08 0)
+					(length 2.54)
+					(name "BCLK"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -10.16 2.54 0)
+					(length 2.54)
+					(name "DIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 0 0)
+					(length 2.54)
+					(name "GAIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 -2.54 0)
+					(length 2.54)
+					(name "SD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 -5.08 0)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 -7.62 0)
+					(length 2.54)
+					(name "VIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "s3_handheld:ESP32-S3_SuperMini"
+			(pin_names (offset 1.016))
+			(exclude_from_sim no) (in_bom yes) (on_board yes)
+			(property "Reference" "U" (at 0 13.969999999999999 0) (effects (font (size 1.27 1.27))))
+			(property "Value" "ESP32-S3_SuperMini" (at 0 -13.969999999999999 0) (effects (font (size 1.27 1.27))))
+			(property "Footprint" "s3_cnc:ESP32-S3_SuperMini_CNC" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "Datasheet" "" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "Description" "ESP32-S3 SuperMini dev board in 2x9 sockets (top view, USB-C up)" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27))))
+			(symbol "ESP32-S3_SuperMini_0_1" (rectangle (start -10.16 12.7) (end 10.16 -12.7) (stroke (width 0.254) (type default)) (fill (type background))))
+			(symbol "ESP32-S3_SuperMini_1_1"
+			(pin passive line (at -12.7 10.16 0) (length 2.54) (name "TX" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+			(pin passive line (at -12.7 7.62 0) (length 2.54) (name "RX" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
+			(pin passive line (at -12.7 5.08 0) (length 2.54) (name "IO1" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27)))))
+			(pin passive line (at -12.7 2.54 0) (length 2.54) (name "IO2" (effects (font (size 1.27 1.27)))) (number "4" (effects (font (size 1.27 1.27)))))
+			(pin passive line (at -12.7 0.0 0) (length 2.54) (name "IO3" (effects (font (size 1.27 1.27)))) (number "5" (effects (font (size 1.27 1.27)))))
+			(pin passive line (at -12.7 -2.539999999999999 0) (length 2.54) (name "IO4" (effects (font (size 1.27 1.27)))) (number "6" (effects (font (size 1.27 1.27)))))
+			(pin passive line (at -12.7 -5.08 0) (length 2.54) (name "IO5" (effects (font (size 1.27 1.27)))) (number "7" (effects (font (size 1.27 1.27)))))
+			(pin passive line (at -12.7 -7.620000000000001 0) (length 2.54) (name "IO6" (effects (font (size 1.27 1.27)))) (number "8" (effects (font (size 1.27 1.27)))))
+			(pin passive line (at -12.7 -10.16 0) (length 2.54) (name "IO7" (effects (font (size 1.27 1.27)))) (number "9" (effects (font (size 1.27 1.27)))))
+			(pin passive line (at 12.7 10.16 180) (length 2.54) (name "5V" (effects (font (size 1.27 1.27)))) (number "10" (effects (font (size 1.27 1.27)))))
+			(pin passive line (at 12.7 7.62 180) (length 2.54) (name "GND" (effects (font (size 1.27 1.27)))) (number "11" (effects (font (size 1.27 1.27)))))
+			(pin passive line (at 12.7 5.08 180) (length 2.54) (name "3V3" (effects (font (size 1.27 1.27)))) (number "12" (effects (font (size 1.27 1.27)))))
+			(pin passive line (at 12.7 2.54 180) (length 2.54) (name "IO13" (effects (font (size 1.27 1.27)))) (number "13" (effects (font (size 1.27 1.27)))))
+			(pin passive line (at 12.7 0.0 180) (length 2.54) (name "IO12" (effects (font (size 1.27 1.27)))) (number "14" (effects (font (size 1.27 1.27)))))
+			(pin passive line (at 12.7 -2.539999999999999 180) (length 2.54) (name "IO11" (effects (font (size 1.27 1.27)))) (number "15" (effects (font (size 1.27 1.27)))))
+			(pin passive line (at 12.7 -5.08 180) (length 2.54) (name "IO10" (effects (font (size 1.27 1.27)))) (number "16" (effects (font (size 1.27 1.27)))))
+			(pin passive line (at 12.7 -7.620000000000001 180) (length 2.54) (name "IO9" (effects (font (size 1.27 1.27)))) (number "17" (effects (font (size 1.27 1.27)))))
+			(pin passive line (at 12.7 -10.16 180) (length 2.54) (name "IO8" (effects (font (size 1.27 1.27)))) (number "18" (effects (font (size 1.27 1.27)))))
+			)
+			(embedded_fonts no)
+		)
+		(symbol "s3_handheld:OLED_128x128_I2C"
+			(pin_names (offset 1.016))
+			(exclude_from_sim no) (in_bom yes) (on_board yes)
+			(property "Reference" "U" (at 0 8.89 0) (effects (font (size 1.27 1.27))))
+			(property "Value" "OLED 1.5in SH1107" (at 0 -8.89 0) (effects (font (size 1.27 1.27))))
+			(property "Footprint" "s3_cnc:OLED_1.5in_128x128_I2C_CNC" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "Datasheet" "" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "Description" "1.5in 128x128 SH1107 I2C OLED module, I2C address 0x3C" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27))))
+			(symbol "OLED_128x128_I2C_0_1" (rectangle (start -7.62 7.62) (end 7.62 -7.62) (stroke (width 0.254) (type default)) (fill (type background))))
+			(symbol "OLED_128x128_I2C_1_1"
+			(pin passive line (at -10.16 5.08 0) (length 2.54) (name "VCC" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+			(pin passive line (at -10.16 2.54 0) (length 2.54) (name "GND" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
+			(pin passive line (at -10.16 0.0 0) (length 2.54) (name "SCL" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27)))))
+			(pin passive line (at -10.16 -2.54 0) (length 2.54) (name "SDA" (effects (font (size 1.27 1.27)))) (number "4" (effects (font (size 1.27 1.27)))))
+			)
+			(embedded_fonts no)
+		)
+		(symbol "s3_handheld:Joystick_Module"
+			(pin_names (offset 1.016))
+			(exclude_from_sim no) (in_bom yes) (on_board yes)
+			(property "Reference" "U" (at 0 8.89 0) (effects (font (size 1.27 1.27))))
+			(property "Value" "KY-023 joystick" (at 0 -8.89 0) (effects (font (size 1.27 1.27))))
+			(property "Footprint" "s3_cnc:Joystick_KY023_CNC" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "Datasheet" "" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27))))
+			(property "Description" "2-axis analog joystick module with push switch" (at 0 0 0) (hide yes) (effects (font (size 1.27 1.27))))
+			(symbol "Joystick_Module_0_1" (rectangle (start -7.62 7.62) (end 7.62 -7.62) (stroke (width 0.254) (type default)) (fill (type background))))
+			(symbol "Joystick_Module_1_1"
+			(pin passive line (at -10.16 5.08 0) (length 2.54) (name "GND" (effects (font (size 1.27 1.27)))) (number "1" (effects (font (size 1.27 1.27)))))
+			(pin passive line (at -10.16 2.54 0) (length 2.54) (name "+5V" (effects (font (size 1.27 1.27)))) (number "2" (effects (font (size 1.27 1.27)))))
+			(pin passive line (at -10.16 0.0 0) (length 2.54) (name "VRX" (effects (font (size 1.27 1.27)))) (number "3" (effects (font (size 1.27 1.27)))))
+			(pin passive line (at -10.16 -2.54 0) (length 2.54) (name "VRY" (effects (font (size 1.27 1.27)))) (number "4" (effects (font (size 1.27 1.27)))))
+			(pin passive line (at -10.16 -5.08 0) (length 2.54) (name "SW" (effects (font (size 1.27 1.27)))) (number "5" (effects (font (size 1.27 1.27)))))
+			)
+			(embedded_fonts no)
+		)
+	)
+	(no_connect (at 88.9 78.74) (uuid "e584c5d2-f13a-479f-af0e-de78d71c1e13"))
+	(no_connect (at 88.9 81.28) (uuid "ebbd3406-997b-4f3a-ae0e-52bc583ec9e7"))
+	(wire (pts (xy 88.9 83.82) (xy 86.36 83.82)) (stroke (width 0) (type default)) (uuid "112d39c2-ae75-472d-a04e-7f47d9c6b92c"))
+	(label "I2S_DIN" (at 86.36 83.82 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "e1ee4ddd-0989-47b5-bdb1-957e5271e8bd"))
+	(wire (pts (xy 88.9 86.36) (xy 86.36 86.36)) (stroke (width 0) (type default)) (uuid "d668f4da-a44d-4ff1-b8e0-12c4959e576e"))
+	(label "I2S_BCLK" (at 86.36 86.36 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "7786eb15-04d6-4386-986e-8b973a1b78e2"))
+	(wire (pts (xy 88.9 88.9) (xy 86.36 88.9)) (stroke (width 0) (type default)) (uuid "c486686b-a42c-44b2-95e2-0ede047bd1a7"))
+	(label "I2S_LRC" (at 86.36 88.9 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "f0099bc4-c069-437f-ad94-e47aa4cd3201"))
+	(wire (pts (xy 88.9 91.44) (xy 86.36 91.44)) (stroke (width 0) (type default)) (uuid "427b320a-426a-48c6-ba72-c5a284981dd1"))
+	(label "BTN_DOWN" (at 86.36 91.44 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "0706176c-68e1-4888-b54d-b60f923f96d1"))
+	(wire (pts (xy 88.9 93.98) (xy 86.36 93.98)) (stroke (width 0) (type default)) (uuid "094d0a78-1f88-4a00-a060-3ac5d0849b66"))
+	(label "BTN_LEFT" (at 86.36 93.98 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "a79210ba-e59b-42dc-82ee-22fa1e154908"))
+	(wire (pts (xy 88.9 96.52) (xy 86.36 96.52)) (stroke (width 0) (type default)) (uuid "1546d4b8-64a1-4241-9dca-7203620d8c50"))
+	(label "BTN_RIGHT" (at 86.36 96.52 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "44807a35-3665-41d1-b033-19b19517e725"))
+	(wire (pts (xy 88.9 99.06) (xy 86.36 99.06)) (stroke (width 0) (type default)) (uuid "b0018a24-849f-45e9-888e-2bfb33be8ace"))
+	(label "BTN_UP" (at 86.36 99.06 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "9a8e33d9-08b9-43b3-b4b4-1aeb1c546e5b"))
+	(wire (pts (xy 114.3 78.74) (xy 116.84 78.74)) (stroke (width 0) (type default)) (uuid "e4b3d9ac-eab7-4dd0-a743-f37dbc1fda81"))
+	(label "+5V" (at 116.84 78.74 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "f099cae9-5c2d-41c7-a674-6741c5b3425e"))
+	(wire (pts (xy 114.3 81.28) (xy 116.84 81.28)) (stroke (width 0) (type default)) (uuid "04e8af6d-8bb0-4dfb-8203-ea25483f66c5"))
+	(label "GND" (at 116.84 81.28 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "704b6a5e-bb1d-4bb1-96e3-67bd139bf5aa"))
+	(wire (pts (xy 114.3 83.82) (xy 116.84 83.82)) (stroke (width 0) (type default)) (uuid "e787785a-8c81-4c89-a11d-7a3ab3c73262"))
+	(label "+3V3" (at 116.84 83.82 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "20fc7660-a5d9-45f7-b1a6-cf24c7cbbc50"))
+	(no_connect (at 114.3 86.36) (uuid "5b141ba3-35f8-4de1-b51d-609d002546ff"))
+	(wire (pts (xy 114.3 88.9) (xy 116.84 88.9)) (stroke (width 0) (type default)) (uuid "e276404b-c8ae-41ff-99b8-53e94f644ea7"))
+	(label "I2C_SCL" (at 116.84 88.9 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "1a23e58e-a8f5-4f8d-b472-df6c8fc9f123"))
+	(wire (pts (xy 114.3 91.44) (xy 116.84 91.44)) (stroke (width 0) (type default)) (uuid "1edeba7a-3c37-488b-b9a3-88d496b7a1ee"))
+	(label "I2C_SDA" (at 116.84 91.44 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "6b75b734-9623-41b3-b5b3-153c37477e95"))
+	(wire (pts (xy 114.3 93.98) (xy 116.84 93.98)) (stroke (width 0) (type default)) (uuid "c241662f-5a9e-4052-a47b-c12d8cd036de"))
+	(label "JOY_X" (at 116.84 93.98 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "7950841e-ba51-4da5-a97c-03d588d7a7d8"))
+	(wire (pts (xy 114.3 96.52) (xy 116.84 96.52)) (stroke (width 0) (type default)) (uuid "b1e446ac-8a20-4267-aacd-3713171a766b"))
+	(label "JOY_Y" (at 116.84 96.52 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "398aca53-3e65-4eac-b532-4012e3d9ac3c"))
+	(wire (pts (xy 114.3 99.06) (xy 116.84 99.06)) (stroke (width 0) (type default)) (uuid "38822b38-87a1-4b0a-912b-0752205b5532"))
+	(label "JOY_SW" (at 116.84 99.06 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "24598c91-3840-45db-af80-7cf3e86d53f1"))
+	(symbol
+		(lib_id "s3_handheld:ESP32-S3_SuperMini")
+		(at 101.6 88.9 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6c792600-a1e4-4db7-83d6-5875d09b4374")
+		(property "Reference" "U1" (at 101.6 74.93 0) (effects (font (size 1.27 1.27))))
+		(property "Value" "ESP32-S3_SuperMini" (at 101.6 102.87 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "s3_cnc:ESP32-S3_SuperMini_CNC" (at 101.6 88.9 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 101.6 88.9 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "" (at 101.6 88.9 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(instances (project "s3_handheld_revA" (path "/16163287-3f32-4049-bb6f-0374ccdfc90b" (reference "U1") (unit 1))))
+	)
+	(wire (pts (xy 180.34 81.28) (xy 177.8 81.28)) (stroke (width 0) (type default)) (uuid "130a2d2f-62e2-468b-89e4-305288301469"))
+	(label "I2S_LRC" (at 177.8 81.28 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "edd47351-b4f0-4399-a41b-4eb643a4265c"))
+	(wire (pts (xy 180.34 83.82) (xy 177.8 83.82)) (stroke (width 0) (type default)) (uuid "6aedba86-7900-469b-89a3-cf9617cbc5be"))
+	(label "I2S_BCLK" (at 177.8 83.82 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "f1dd9e05-1e0d-4e6d-ab0e-9d0ebb998c0d"))
+	(wire (pts (xy 180.34 86.36) (xy 177.8 86.36)) (stroke (width 0) (type default)) (uuid "236e342c-1f81-4cd4-a78e-ceff56e5c4a4"))
+	(label "I2S_DIN" (at 177.8 86.36 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "fe328fc4-4ddf-411b-a3f8-efbb4cd2167b"))
+	(no_connect (at 180.34 88.9) (uuid "4de32c87-3918-40e1-96fe-49b8618c9b00"))
+	(no_connect (at 180.34 91.44) (uuid "dc580b99-eb4b-4714-bff9-bb2067b657d5"))
+	(wire (pts (xy 180.34 93.98) (xy 177.8 93.98)) (stroke (width 0) (type default)) (uuid "89c77a8b-b4e8-4a43-b8b3-81dc5834a0de"))
+	(label "GND" (at 177.8 93.98 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "80816f1c-fe70-49fd-8d73-605332b9d355"))
+	(wire (pts (xy 180.34 96.52) (xy 177.8 96.52)) (stroke (width 0) (type default)) (uuid "6dbb26ee-1f89-4704-bc3c-8f47c94276df"))
+	(label "+5V" (at 177.8 96.52 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "b0cbf7a1-af6b-4d4c-8585-77d2c302e448"))
+	(symbol
+		(lib_id "s3_handheld:MAX98357A_Module")
+		(at 190.5 88.9 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "4e20f6d1-4cd5-4718-9bd7-8b8f2a3c350e")
+		(property "Reference" "U2" (at 190.5 76.2 0) (effects (font (size 1.27 1.27))))
+		(property "Value" "MAX98357A" (at 190.5 101.60000000000001 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "s3_cnc:MAX98357A_Module_CNC" (at 190.5 88.9 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 190.5 88.9 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "" (at 190.5 88.9 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(instances (project "s3_handheld_revA" (path "/16163287-3f32-4049-bb6f-0374ccdfc90b" (reference "U2") (unit 1))))
+	)
+	(wire (pts (xy 180.34 45.72) (xy 177.8 45.72)) (stroke (width 0) (type default)) (uuid "c95846bf-f0b0-4033-bb76-b1e592a0a69b"))
+	(label "+3V3" (at 177.8 45.72 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "530925cf-5b4f-4ac5-9474-791571abc0a0"))
+	(wire (pts (xy 180.34 48.26) (xy 177.8 48.26)) (stroke (width 0) (type default)) (uuid "1e17dea1-a949-4555-93c0-9ea1d6f0f70c"))
+	(label "GND" (at 177.8 48.26 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "577b8d2c-712a-4e79-bc18-aa9083683398"))
+	(wire (pts (xy 180.34 50.8) (xy 177.8 50.8)) (stroke (width 0) (type default)) (uuid "d06cee50-4451-410e-a540-f856ef4921f6"))
+	(label "I2C_SCL" (at 177.8 50.8 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "fe654373-b822-4000-940f-943dd4dd5ac0"))
+	(wire (pts (xy 180.34 53.34) (xy 177.8 53.34)) (stroke (width 0) (type default)) (uuid "fe632131-a6a7-44f0-b009-f1b13a751f1a"))
+	(label "I2C_SDA" (at 177.8 53.34 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "4278d768-5e83-4233-93c6-5de818eae802"))
+	(symbol
+		(lib_id "s3_handheld:OLED_128x128_I2C")
+		(at 190.5 50.8 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7e9e9e38-0afa-4a89-ae63-bedaf37ce5fe")
+		(property "Reference" "U3" (at 190.5 41.91 0) (effects (font (size 1.27 1.27))))
+		(property "Value" "OLED 1.5in SH1107" (at 190.5 59.69 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "s3_cnc:OLED_1.5in_128x128_I2C_CNC" (at 190.5 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 190.5 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "" (at 190.5 50.8 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(instances (project "s3_handheld_revA" (path "/16163287-3f32-4049-bb6f-0374ccdfc90b" (reference "U3") (unit 1))))
+	)
+	(wire (pts (xy 35.56 83.82) (xy 33.02 83.82)) (stroke (width 0) (type default)) (uuid "8dd2d2a1-5242-4e0c-8686-7ced088b8a5f"))
+	(label "GND" (at 33.02 83.82 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "6ecb36ce-def7-4f17-8f89-b49db59d6bf5"))
+	(wire (pts (xy 35.56 86.36) (xy 33.02 86.36)) (stroke (width 0) (type default)) (uuid "747ddda2-0f94-44fe-ae6e-ffbeb4a67241"))
+	(label "+3V3" (at 33.02 86.36 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "e7c22bd0-9fab-4958-bfd6-d791cddc0953"))
+	(wire (pts (xy 35.56 88.9) (xy 33.02 88.9)) (stroke (width 0) (type default)) (uuid "e6ae5c76-34ff-4df7-be06-72a0d40ab838"))
+	(label "JOY_X" (at 33.02 88.9 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "88f3cea9-30be-44f8-bb21-4e8fd1ba067b"))
+	(wire (pts (xy 35.56 91.44) (xy 33.02 91.44)) (stroke (width 0) (type default)) (uuid "47797446-9432-4e25-b013-f484470de62c"))
+	(label "JOY_Y" (at 33.02 91.44 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "7832aae5-98b3-43c4-9497-0706ee2600ca"))
+	(wire (pts (xy 35.56 93.98) (xy 33.02 93.98)) (stroke (width 0) (type default)) (uuid "57a800aa-43fb-4af4-9043-3cf0ffe1c4b5"))
+	(label "JOY_SW" (at 33.02 93.98 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "7d412d1e-d54d-4a47-8fa7-1e216ee878f7"))
+	(symbol
+		(lib_id "s3_handheld:Joystick_Module")
+		(at 45.72 88.9 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5e00ef98-9ab0-4f06-9a86-76c0f343e4f6")
+		(property "Reference" "U4" (at 45.72 80.01 0) (effects (font (size 1.27 1.27))))
+		(property "Value" "KY-023 joystick" (at 45.72 97.79 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "s3_cnc:Joystick_KY023_CNC" (at 45.72 88.9 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 45.72 88.9 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "" (at 45.72 88.9 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(instances (project "s3_handheld_revA" (path "/16163287-3f32-4049-bb6f-0374ccdfc90b" (reference "U4") (unit 1))))
+	)
+	(wire (pts (xy 177.8 127.0) (xy 175.26 127.0)) (stroke (width 0) (type default)) (uuid "def494b0-1c97-449f-895a-92440587cdbd"))
+	(label "BTN_UP" (at 175.26 127.0 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "8615fee1-fccd-4ea9-9be7-b7e7700c651b"))
+	(wire (pts (xy 187.96 127.0) (xy 190.5 127.0)) (stroke (width 0) (type default)) (uuid "3170c41b-61cf-4106-9948-50bbcc9dc80b"))
+	(label "GND" (at 190.5 127.0 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "73038197-87f9-4d4e-b670-b81568a5052a"))
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 182.88 127.0 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1bc3c18d-7816-40b1-affc-ef7d50e50afc")
+		(property "Reference" "SW1" (at 186.69 121.92 0) (effects (font (size 1.27 1.27))))
+		(property "Value" "BTN_UP" (at 186.69 132.08 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "s3_cnc:SW_Tact_6mm_CNC" (at 182.88 127.0 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 182.88 127.0 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "" (at 182.88 127.0 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(instances (project "s3_handheld_revA" (path "/16163287-3f32-4049-bb6f-0374ccdfc90b" (reference "SW1") (unit 1))))
+	)
+	(wire (pts (xy 177.8 139.7) (xy 175.26 139.7)) (stroke (width 0) (type default)) (uuid "4953a588-aa69-4d9f-aa3a-9ea442fa0991"))
+	(label "BTN_LEFT" (at 175.26 139.7 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "1b52132a-53ee-4e52-add3-4297190a5e4c"))
+	(wire (pts (xy 187.96 139.7) (xy 190.5 139.7)) (stroke (width 0) (type default)) (uuid "c8cca0de-f9a8-439a-ae70-08d8589a8db6"))
+	(label "GND" (at 190.5 139.7 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "12d333dd-a856-43ef-a935-7bceaae2c9e2"))
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 182.88 139.7 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "22e4ea6c-bf9f-4928-a6e2-bb1f0a8a15d1")
+		(property "Reference" "SW2" (at 186.69 134.61999999999998 0) (effects (font (size 1.27 1.27))))
+		(property "Value" "BTN_LEFT" (at 186.69 144.78 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "s3_cnc:SW_Tact_6mm_CNC" (at 182.88 139.7 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 182.88 139.7 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "" (at 182.88 139.7 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(instances (project "s3_handheld_revA" (path "/16163287-3f32-4049-bb6f-0374ccdfc90b" (reference "SW2") (unit 1))))
+	)
+	(wire (pts (xy 177.8 152.4) (xy 175.26 152.4)) (stroke (width 0) (type default)) (uuid "fe05177c-28fa-461d-a408-8415e36ecce8"))
+	(label "BTN_RIGHT" (at 175.26 152.4 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "11e1c7a8-d724-47b7-8ed4-f9f616228d7a"))
+	(wire (pts (xy 187.96 152.4) (xy 190.5 152.4)) (stroke (width 0) (type default)) (uuid "3fe112b8-3004-4249-8612-4e067e7047b7"))
+	(label "GND" (at 190.5 152.4 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "9b7f0683-fbe4-440c-bf2c-3b9624a436a6"))
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 182.88 152.4 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b6ec935a-5ed8-47d3-9c52-e7e6b1a7d785")
+		(property "Reference" "SW3" (at 186.69 147.32 0) (effects (font (size 1.27 1.27))))
+		(property "Value" "BTN_RIGHT" (at 186.69 157.48000000000002 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "s3_cnc:SW_Tact_6mm_CNC" (at 182.88 152.4 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 182.88 152.4 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "" (at 182.88 152.4 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(instances (project "s3_handheld_revA" (path "/16163287-3f32-4049-bb6f-0374ccdfc90b" (reference "SW3") (unit 1))))
+	)
+	(wire (pts (xy 177.8 165.1) (xy 175.26 165.1)) (stroke (width 0) (type default)) (uuid "288d65d0-f87b-4d9a-b89b-1319350e6ed2"))
+	(label "BTN_DOWN" (at 175.26 165.1 180) (effects (font (size 1.27 1.27)) (justify right bottom)) (uuid "d682e77b-08ee-4b3c-ab37-cd726638f8f8"))
+	(wire (pts (xy 187.96 165.1) (xy 190.5 165.1)) (stroke (width 0) (type default)) (uuid "ffb6272e-cc1e-408d-b140-85fbb387fe80"))
+	(label "GND" (at 190.5 165.1 0) (effects (font (size 1.27 1.27)) (justify left bottom)) (uuid "a20e161f-efaf-44b4-ba15-fd9e381dbad2"))
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 182.88 165.1 0)
+		(unit 1)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "73e2ee7f-bf78-4ee0-928c-fa3aac8c13fd")
+		(property "Reference" "SW4" (at 186.69 160.01999999999998 0) (effects (font (size 1.27 1.27))))
+		(property "Value" "BTN_DOWN" (at 186.69 170.18 0) (effects (font (size 1.27 1.27))))
+		(property "Footprint" "s3_cnc:SW_Tact_6mm_CNC" (at 182.88 165.1 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Datasheet" "" (at 182.88 165.1 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(property "Description" "" (at 182.88 165.1 0) (hide yes) (effects (font (size 1.27 1.27))))
+		(instances (project "s3_handheld_revA" (path "/16163287-3f32-4049-bb6f-0374ccdfc90b" (reference "SW4") (unit 1))))
+	)
+	(text "FIRMWARE PIN MAP (ESP32-S3 SuperMini)\nOLED I2C (SH1107 128x128, addr 0x3C): SDA = GPIO11, SCL = GPIO12, powered from 3V3\nJoystick (powered from 3V3, NOT 5V): X = GPIO10 (ADC1_CH9), Y = GPIO9 (ADC1_CH8), SW = GPIO8 (INPUT_PULLUP)\nAmp I2S: LRC = GPIO3, BCLK = GPIO2, DIN = GPIO1, VIN = 5V\nButtons (INPUT_PULLUP, pressed = LOW): UP = 7, RIGHT = 6, LEFT = 5, DOWN = 4\nOnboard RGB LED: GPIO48. Native USB (CDC) for Serial. Free: TX/RX (43/44), GPIO13" (exclude_from_sim no) (at 30.48 152.4 0) (effects (font (size 1.524 1.524)) (justify left bottom)) (uuid "1eba11b8-67db-464e-be8c-2fcc58e12822"))
+	(sheet_instances (path "/" (page "1")))
+	(embedded_fonts no)
+)

@@ -1,0 +1,54 @@
+S3 HANDHELD REV A - CNC CHEAT SHEET (Genmitsu Cubiko + FlatCAM)
+================================================================
+Board: 96 x 66 mm, rounded corners, single-sided, ALL COPPER ON THE BOTTOM (B_Cu)
+Fits the 100 x 70 copper-clad, zero X/Y ~2 mm in. No wire jumpers.
+Parts: ESP32-S3 SuperMini (2x9 female headers), 1.5" 128x128 SH1107 I2C OLED (1x4 female),
+KY-023 joystick (1x5 female), MAX98357A breakout (1x7 female), 4x 6 mm tact buttons.
+
+BEFORE MILLING
+  1. Print PRINT_1to1_fit_test.pdf at 100% (no "fit to page"). Check:
+     - OLED: its 4 header pins land on U3's pads with the module body to the LEFT of the
+       header (display side up). The OLED outline was measured from a photo - make sure
+       the module doesn't hit the joystick below it or the amp to the right.
+     - Joystick: body to the LEFT of its header, pins down. Swap its right-angle header
+       for a straight one first.
+     - SuperMini pinout (top view, USB-C pointing DOWN on this board):
+         right row (next to the buttons)  TX RX 1 2 3 4 5 6 7  (bottom -> top)
+         left row  (next to the joystick) 5V GND 3V3 13 12 11 10 9 8
+  2. Mounting holes: 4 holes, 3 corners + one on the left edge beside the OLED (the
+     bottom-left corner is under the joystick). Drill more for the modules' own holes
+     as needed.
+
+G-CODE - ALREADY GENERATED (FlatCAM ran headless on the studio PC, 2026-10-01)
+  Run in this order:
+  1_isolation_0.1vbit.nc      20 deg V-bit, Z -0.05 (go -0.07 if traces don't separate)
+  2_holes_1.0drill.nc         1.0 mm drill, all 50 component holes
+  3_mounting_2.0drill.nc      2.0 mm drill, 4 mounting pilots -> open to 3.2 by hand (M3)
+  4_outline_score_0.1vbit.nc  V-bit scores the outline at Z -0.07, snap/cut out by hand
+  Drill files are ALREADY spindle-patched (fix_drill_spinup.py, .orig copies kept).
+  To regenerate after a board change: FlatCAM > File > Scripting > Run Script (Shift+S)
+  > cnc/load_and_mirror.tcl, then  python fix_drill_spinup.py 2_holes_1.0drill.nc 3_mounting_2.0drill.nc
+
+BIT CHANGE ROUTINE (V-bit -> 1.0 -> 2.0 -> V-bit)  - same as the other boards
+  1. Swap the bit (file ends at Z15)            2. DON'T touch X/Y zero
+  3. Re-zero Z by hand (paper) with the new bit  4. No height map / probing with drills
+  5. Spindle on full, check it spins, run. Files start M03 S10000 + 3 s pause.
+
+LAYOUT (top view)
+  OLED top-left/centre, header on its right edge          Amp top-right, speaker terminal
+  Joystick bottom-left, header on its right edge            faces left (toward the OLED)
+  SuperMini bottom-centre, USB-C at the bottom edge        4-button diamond bottom-right
+
+FIRMWARE PIN MAP (ESP32-S3 SuperMini)
+  OLED I2C: SDA 11, SCL 12 (addr 0x3C), powered from 3V3
+  Joystick: X 10, Y 9 (ADC1), SW 8 (INPUT_PULLUP). Powered from 3V3 - NOT 5V, despite
+            the "+5V" label on the module (5V would push the ADC pins past 3.3 V)
+  Amp (I2S out): LRC 3, BCLK 2, DIN 1, VIN from 5V
+  Buttons (INPUT_PULLUP, pressed = LOW): UP 7  RIGHT 6  LEFT 5  DOWN 4
+  Onboard RGB LED: GPIO48.  Arduino: board "ESP32S3 Dev Module", USB CDC On Boot = Enabled
+  Test sketch: firmware/handheld_bringup/handheld_bringup.ino (needs U8g2, compiles clean)
+  Joystick is mounted rotated 180 deg - flip the axes in software if they read backwards.
+
+REGENERATING THE BOARD
+  python tools/gen_board.py  then  "C:\Program Files\KiCad\10.0\bin\python.exe" tools/fill_sync.py
+  then kicad-cli ERC + DRC (--schematic-parity --severity-all). Rev A was 0 / 0 / 0.
